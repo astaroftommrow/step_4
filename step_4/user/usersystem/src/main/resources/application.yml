@@ -1,0 +1,28 @@
+server:
+  port: 8091
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  shutdown: graceful
+
+# spring.application.name : Application Name ?? (front-end? ??)
+# spring.datasource : ?? DB ??
+# spring.datasource.hikari.maximum-pool-size = 4 : DataBase Connection Pool ??
+# spring.mvc.hiddenmethod.filter.enabled : MVC ????? Hidden Method ?? ?? ?? (Form ? ?? PUT, DELETE ????? ? ? ???)
+spring:
+  application:
+    name: front-end
+  datasource:
+    url: jdbc:mysql://34.125.199.220:3306/jh?characterEncoding=UTF-8
+    username: datasolution
+    password: 12
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# mybatis ?? (mybatis-config.xml ?? ???? ?? ??)
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations:
+    - /mapper/**/*.xml

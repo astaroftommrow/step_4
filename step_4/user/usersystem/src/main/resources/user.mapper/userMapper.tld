@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.datasolution.msa.frontend.board.mapper.BoardMapper">
+    <select id="findAll" resultType="com.example.user.data.solution.dto.UserDto">
+        SELECT USER.ID
+             , USER.USERNAME
+             , BOARD.TITLE
+             , BOARD.CONTENTS
+             , BOARD.UPD_DT
+        FROM USER
+                 LEFT JOIN BOARD
+                           ON USER.ID = BOARD.ID
+
+    </select>
+
+    <select id="findById" parameterType="int" resultType="com.example.user.data.solution.dto.UserDto">
+        INSERT
+        INTO USER (ID
+        , USERNAME)
+        VALUES (#{title}
+        , #{contents}
+        , NOW())
+
+    </select>
+
+</mapper>
